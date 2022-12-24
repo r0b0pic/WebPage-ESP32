@@ -1,0 +1,45 @@
+{% args led_value %}
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <title>Speed motor Webserver</title>
+      <link rel="stylesheet" href="static/css/entireframework.min.css" />
+      <link rel="stylesheet" href="static/css/index.css" />
+      <!-- Load plotly.js into the DOM -->
+      <script src='https://cdn.plot.ly/plotly-2.16.1.min.js'></script>
+   </head>
+   <body>
+      <script src="static/js/index.js"></script>
+      <nav class="nav" tabindex="-1" onclick="this.focus()">
+         <div class="container">
+
+         </div>
+      </nav>
+      <button class="btn-close btn btn-sm">×</button>
+      <div class="container">
+         <div class="hero">
+            <h1 class="Machine state">Test</h1>
+            <div class="toggle-div">
+                <p class="label">Power motor</p>
+                <input type="checkbox" id="switch" onclick="toggleButtonSwitch()" {% if led_value == 1 %} checked {% endif %}/><label for="switch">Toggle</label>
+            </div>
+            <div id="ledstate" style="background-color: gray; width: 100px; height: 100px">
+            </div>
+            
+         </div>
+      </div>
+      <div class="container">
+         <div class="hero">
+            <h1 class="title">Speed motor controller</h1>
+            <div class="graphDiv">
+               <div id='forceDiv'>
+               </div>
+               <div id='speedDiv'>
+               </div>
+            </div>
+         </div>
+      </div>
+   </body>
+</html>
